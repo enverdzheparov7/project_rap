@@ -12,6 +12,7 @@ var app = express();
 // view engine setup
 app.engine('ejs',require('ejs-locals'));
 app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'bower_components')));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));

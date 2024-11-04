@@ -7,7 +7,7 @@ console.log(data)
 // const url = 'mongodb://localhost:27017';
 // const client = new MongoClient(url);
 // // Database Name
-// const dbName = 'test2024';
+// const dbName = 'rap_2024';
 // async function main() {
 // // Use connect method to connect to the server
 // await client.connect();

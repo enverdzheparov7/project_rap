@@ -18,7 +18,7 @@ const insertResult = await collection.insertMany(data);
 console.log('Inserted documents =>', insertResult);
 return 'done.';
 }
-main()
+main() 
 .then(console.log)
 .catch(console.error)
 .finally(() => client.close());

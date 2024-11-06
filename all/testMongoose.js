@@ -7,5 +7,5 @@ var rapper = new Rapper({
     title: "Эминем",
     nick : "Eminem",
 })
-
+ 
 rapper.save();

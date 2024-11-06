@@ -9,4 +9,4 @@ schema.methods.yo = function(){
 const Rapper = mongoose.model('Rapper', schema);
 
 const rapper = new Rapper({ name: 'Oxxxymiron' });
-rapper.save().then(() => rapper.yo());
+rapper.save().then(() => rapper.yo()); 

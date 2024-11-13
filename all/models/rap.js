@@ -1,17 +1,20 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
-var rapperSchema = new Schema({
+
+var rapperSchema = new Schema(
+   {
    title: String,
-nick: {
+   nick: 
+   {
    type: String,
    unique: true,
    required: true
  },
    avatar: String,
    desc: String,
-created:{
-   type:Date,
-   default:Date.now
+   created:{
+        type:Date,
+        default:Date.now
  }
  })
 

@@ -7,21 +7,19 @@ router.get('/', function(req, res, next) {
   res.send('Новый маршрутизатор, для маршрутов, начинающихся с rappers');
 });
 
-//Страница рэперов 
-router.get("/:nick", async function(req, res, next) 
-{
-  var rappers = await Rapper.find({nick: req.params.nick});
-  console.log(rappers)
-  if(!rappers.length) return next(new Error("Нет такого рэпера"))
-  var rapper = rappers[0];
-  res.render('rapper', 
-    {
+  router.get("/:nick", async function(req, res, next) {
+    var rappers = await Rapper.find({nick: req.params.nick});
+    console.log(rappers)
+    if(!rappers.length) {
+      return next(new Error("Нет такого рэпера"))}
+    var rapper = rappers[0];
+    res.render('rapper', {
     title: rapper.title,
     picture: rapper.avatar,
     desc: rapper.desc
-  })
-  
-  }); 
-  
-  
+    })
+    });
+    
+
+
 module.exports = router;

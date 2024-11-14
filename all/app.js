@@ -37,12 +37,14 @@ app.use(session({
   saveUninitialized: true,
   store: MongoStore.create({mongoUrl:'mongodb://localhost/rap_2024'
   })
-}))
+}))//9.2-9.3
 app.use(function(req,res,next){
   req.session.counter = req.session.counter + 1 || 1
-  next()
+  next()//9.4
   })
   
+app.use(require("./middlewares/createMenu.js"))//9.5
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

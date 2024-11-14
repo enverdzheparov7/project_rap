@@ -10,6 +10,7 @@ mongoose.connect('mongodb://localhost/rap_2024')
 var session = require("express-session")
 
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var rappers = require('./routes/rappers');

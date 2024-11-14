@@ -45,6 +45,7 @@ app.use(function(req,res,next){
   })
   
 app.use(require("./middlewares/createMenu.js"))//9.5
+app.use(require("./middlewares/createUser.js"))//10.5
 
 
 app.use('/', indexRouter);

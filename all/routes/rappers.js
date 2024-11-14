@@ -1,13 +1,15 @@
 var express = require('express');
 var router = express.Router();
 var Rapper = require('../models/rap').Rapper;
+var checkAuth = require("../middlewares/checkAuth.js");
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('Новый маршрутизатор, для маршрутов, начинающихся с rappers');
 });
-
-  router.get("/:nick", async function(req, res, next) {
+/*Страница рэперов*/
+router.get("/:nick", checkAuth, async function(req, res, next) {
     var rappers = await Rapper.find({nick: req.params.nick});
     console.log(rappers)
     if(!rappers.length) {
